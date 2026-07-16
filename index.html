@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>khaled nablsy — مثلث التصدير الذكي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+<meta name="description" content="خالد نابلسي — مثلث التصدير الذكي. خبرة +8 سنوات في التصدير الدولي ودمج الذكاء الاصطناعي في أبحاث السوق وتوليد عملاء B2B.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://smart-export-triangle.netlify.app/">
+<meta property="og:title" content="khaled nablsy — مثلث التصدير الذكي">
+<meta property="og:description" content="خبرة +8 سنوات في التصدير الدولي · دمج الذكاء الاصطناعي في كل خطوة — من اكتشاف السوق لتوليد العملاء.">
+<meta property="og:image" content="https://smart-export-triangle.netlify.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:site_name" content="مثلث التصدير الذكي">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="khaled nablsy — مثلث التصدير الذكي">
+<meta name="twitter:description" content="خبرة +8 سنوات في التصدير الدولي · دمج الذكاء الاصطناعي في كل خطوة.">
+<meta name="twitter:image" content="https://smart-export-triangle.netlify.app/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0F1A'/%3E%3Cpolygon points='50,20 82,76 18,76' fill='none' stroke='%23F59E0B' stroke-width='9' stroke-linejoin='round'/%3E%3Ccircle cx='50' cy='36' r='6' fill='%2322C55E'/%3E%3Ccircle cx='72' cy='70' r='6' fill='%233B82F6'/%3E%3Ccircle cx='28' cy='70' r='6' fill='%23F59E0B'/%3E%3C/svg%3E">
+<style>
+
+:root{
+  --bg:#0A0F1A;
+  --surface:#111827;
+  --surface2:#0D1520;
+  --border:#1F2937;
+  --amber:#F59E0B;
+  --green:#22C55E;
+  --blue:#3B82F6;
+  --text:#FFFFFF;
+  --text2:#9CA3AF;
+  --text3:#6B7280;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;overflow-x:hidden}
+.mono{font-family:'JetBrains Mono',monospace}
+
+::selection{background:var(--amber);color:#0A0F1A}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(10,15,26,0.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+nav .brand{font-weight:900;font-size:16px;color:var(--amber)}
+nav .links{display:flex;gap:28px}
+nav .links a{color:var(--text2);text-decoration:none;font-size:13px;font-weight:600;transition:color .2s}
+nav .links a:hover{color:var(--amber)}
+.back-btn{color:var(--amber)!important;font-weight:700!important}
+
+.mobile-back{display:none}
+@media(max-width:900px){
+  .mobile-back{display:flex;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:200;background:var(--amber);color:#0A0F1A;padding:12px 26px;border-radius:30px;font-size:14px;font-weight:700;text-decoration:none;align-items:center;gap:8px;box-shadow:0 4px 16px rgba(0,0,0,0.4)}
+}
+
+.hero{min-height:auto;display:flex;align-items:center;padding:116px 8% 44px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;width:100%;max-width:1300px;margin:0 auto}
+.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:3px;color:var(--amber);margin-bottom:16px;opacity:0;animation:fadeUp .7s ease forwards}
+.indagro-badge{display:inline-block;background:var(--surface);border:1px solid var(--border);border-right:3px solid var(--amber);padding:8px 16px;border-radius:4px;font-size:13px;font-weight:700;color:var(--text);margin-bottom:20px;opacity:0;animation:fadeUp .7s ease .05s forwards}
+.cred-badge{display:flex;align-items:flex-start;gap:10px;background:var(--surface2);border:1px solid var(--green);border-radius:6px;padding:12px 16px;margin-bottom:22px;max-width:480px;opacity:0;animation:fadeUp .7s ease .25s forwards}
+.cred-dot{width:8px;height:8px;border-radius:50%;background:var(--green);margin-top:5px;flex-shrink:0;box-shadow:0 0 8px var(--green)}
+.cred-badge span{font-size:12.5px;color:var(--text2);font-weight:700;line-height:1.6}
+.hero h1{font-size:56px;font-weight:900;line-height:1.25;margin-bottom:18px;opacity:0;animation:fadeUp .7s ease .1s forwards}
+.hero h1 span{color:var(--amber)}
+.hero .role{font-family:'JetBrains Mono',monospace;font-size:13.5px;color:var(--text2);line-height:2;max-width:520px;margin-bottom:28px;opacity:0;animation:fadeUp .7s ease .2s forwards}
+.hero p.desc{font-size:15.5px;color:var(--text2);max-width:500px;margin-bottom:32px;opacity:0;animation:fadeUp .7s ease .3s forwards}
+.hero .cta-row{display:flex;gap:14px;opacity:0;animation:fadeUp .7s ease .4s forwards}
+.btn{padding:13px 28px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;display:inline-block}
+.btn-primary{background:var(--amber);color:#0A0F1A}
+.btn-primary:hover{background:#fbbf24}
+.btn-ghost{border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+.tri-wrap{display:flex;align-items:center;justify-content:center;position:relative}
+.tri-svg{width:100%;max-width:420px;height:auto}
+.tri-line{stroke:var(--border);stroke-width:1.5;fill:none}
+.tri-line-draw{stroke:var(--amber);stroke-width:2;fill:none;stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.2s ease forwards .5s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.tri-node{fill:var(--surface);stroke:var(--amber);stroke-width:2}
+.tri-node-inner{fill:var(--amber)}
+.tri-label{font-family:'JetBrains Mono',monospace;font-size:13px;fill:var(--text);font-weight:700}
+.tri-sublabel{font-family:'Cairo',sans-serif;font-size:11px;fill:var(--text3)}
+.tri-center-label{font-family:'JetBrains Mono',monospace;font-size:10px;fill:var(--text3);letter-spacing:2px}
+
+section{padding:90px 8%;border-bottom:1px solid var(--border);max-width:1300px;margin:0 auto}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:3px;color:var(--amber);margin-bottom:16px}
+h2{font-size:32px;font-weight:900;margin-bottom:36px}
+h2 span{color:var(--amber)}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.about-grid p{font-size:15.5px;color:var(--text2);margin-bottom:18px}
+.about-grid p b{color:var(--text)}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:10px}
+.stat{border-right:2px solid var(--amber);padding-right:16px}
+.stat .num{font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:700;color:var(--amber)}
+.stat .lbl{font-size:12.5px;color:var(--text2);margin-top:4px}
+
+.split-callout{margin-top:50px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:32px 36px}
+.split-label{font-size:11px;letter-spacing:3px;color:var(--text3);margin-bottom:16px}
+.split-bar{display:flex;width:100%;height:56px;border-radius:8px;overflow:hidden;margin-bottom:16px}
+.split-seg{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.split-ai{width:60%;background:var(--amber);color:#0A0F1A}
+.split-human{width:40%;background:var(--green);color:#0A0F1A}
+.split-pct{font-size:18px;font-weight:700}
+.split-txt{font-size:11px;font-weight:700}
+.split-note{font-size:13.5px;color:var(--text2)}
+
+.partner-row{display:flex;gap:16px;flex-wrap:wrap}
+.partner-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px 26px;flex:1;min-width:260px}
+.partner-card .ptag{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--amber);letter-spacing:2px;margin-bottom:10px}
+.partner-card h3{font-size:17px;font-weight:900;margin-bottom:8px}
+.partner-card p{font-size:13.5px;color:var(--text2)}
+.partner-featured{border-color:var(--green);border-width:2px;background:var(--surface2)}
+.partner-featured .ptag{color:var(--green)}
+
+.method-row{display:flex;flex-direction:column;gap:0}
+.method-step{display:grid;grid-template-columns:60px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--border)}
+.method-step:last-child{border-bottom:none}
+.method-tool{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--amber);font-weight:700;padding-top:2px}
+.method-step h4{font-size:15.5px;font-weight:700;margin-bottom:6px}
+.method-step p{font-size:13.5px;color:var(--text2)}
+
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-bottom:8px}
+.tool-chip{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;transition:border-color .2s}
+.tool-chip:hover{border-color:var(--amber)}
+.tool-mono{width:34px;height:34px;border-radius:8px;background:var(--surface2);border:1px solid var(--amber);color:var(--amber);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tool-chip span{font-size:13px;font-weight:700}
+.tools-subhead{font-size:11.5px;letter-spacing:2px;color:var(--text3);margin:26px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.tools-note{background:var(--surface2);border:1px solid var(--amber);border-radius:8px;padding:16px 20px;font-size:13.5px;color:var(--text2);margin-top:20px}
+.tools-note b{color:var(--amber)}
+
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cap-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px 22px;transition:border-color .2s}
+.cap-card:hover{border-color:var(--amber)}
+.cap-icon{font-size:24px;margin-bottom:12px}
+.cap-card h4{font-size:14.5px;font-weight:700;margin-bottom:8px;line-height:1.5}
+.cap-card p{font-size:12.5px;color:var(--text2)}
+
+.courses-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:30px}
+.courses-grid-2{grid-template-columns:repeat(2,1fr)}
+.courses-subhead{font-size:12px;letter-spacing:2px;color:var(--text3);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.ai-subhead{color:var(--amber);border-color:var(--amber)}
+.course-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px 20px}
+.course-card-corp{border-color:var(--amber);background:var(--surface2)}
+.course-card-ai{border:2px solid var(--amber);background:var(--surface2)}
+.course-fmt{font-size:10px;letter-spacing:2px;color:var(--amber);font-weight:700;margin-bottom:10px}
+.course-card h4{font-size:15px;font-weight:900;margin-bottom:8px}
+.course-card p{font-size:12.5px;color:var(--text2)}
+.cal-note-inline{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 22px;font-size:13px;color:var(--text2);margin-top:10px}
+.cal-note-inline b{color:var(--amber)}
+
+.month-program{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:36px 40px;margin-bottom:36px}
+.month-program-head{margin-bottom:26px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.month-program-head .ptag{color:var(--amber);font-size:11px;letter-spacing:2px;margin-bottom:10px}
+.month-program-head h3{font-size:20px;font-weight:900;margin-bottom:6px}
+.month-program-head p{font-size:13.5px;color:var(--text2)}
+.month-subhead{font-size:11.5px;letter-spacing:2px;color:var(--amber);margin:24px 0 16px}
+.learn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.learn-item{display:flex;gap:12px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:14px 16px}
+.learn-item span{font-size:20px}
+.learn-item b{font-size:13.5px;display:block;margin-bottom:4px}
+.learn-item p{font-size:12px;color:var(--text2)}
+.plan-list{display:flex;flex-direction:column}
+.plan-item{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--border)}
+.plan-item:last-child{border-bottom:none}
+.plan-num{background:var(--amber);color:#0A0F1A;font-weight:900;font-size:13px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.plan-item b{font-size:14px;display:block;margin-bottom:4px}
+.plan-item p{font-size:12.5px;color:var(--text2)}
+.result-list{list-style:none;padding:0}
+.result-list li{font-size:13.5px;color:var(--text2);padding:6px 0 6px 0;padding-right:22px;position:relative}
+.result-list li:before{content:"✓";position:absolute;right:0;color:var(--green);font-weight:700}
+
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.case-grid-6{grid-template-columns:repeat(3,1fr)}
+.case-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:26px;transition:border-color .2s}
+.case-card:hover{border-color:var(--amber)}
+.case-card .ctag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:2px;margin-bottom:12px}
+.case-card h3{font-size:16px;font-weight:900;margin-bottom:10px}
+.case-card p{font-size:13px;color:var(--text2);margin-bottom:14px}
+.case-card .metric{font-family:'JetBrains Mono',monospace;font-size:22px;color:var(--amber);font-weight:700}
+.case-card .metric-lbl{font-size:11px;color:var(--text3)}
+
+.future-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:20px}
+.future-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px 20px;text-align:center}
+.future-icon{font-size:26px;margin-bottom:12px}
+.future-card h4{font-size:14.5px;font-weight:900;margin-bottom:8px}
+.future-card p{font-size:12.5px;color:var(--text2)}
+.future-note{background:var(--surface2);border:1px solid var(--amber);border-radius:8px;padding:18px 22px;font-size:13.5px;color:var(--text2)}
+
+.contact-box{background:var(--surface);border:1px solid var(--amber);border-radius:10px;padding:50px 60px;text-align:center}
+.contact-box h2{margin-bottom:16px}
+.contact-box p{font-size:15px;color:var(--text2);margin-bottom:26px}
+.booking-box{background:var(--surface);border:1px solid var(--amber);border-radius:12px;padding:48px 56px;max-width:760px;margin:0 auto;text-align:center}
+.booking-eyebrow{font-size:12px;letter-spacing:3px;color:var(--amber);margin-bottom:12px}
+.booking-box h2{margin-bottom:14px}
+.booking-box>p{font-size:15px;color:var(--text2);margin-bottom:32px}
+.booking-form{text-align:right}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:700;color:var(--text2);margin-bottom:16px}
+.field input,.field select,.field textarea{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:14px;font-weight:400;width:100%;transition:border-color .2s;color-scheme:dark}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--amber)}
+.field input::placeholder,.field textarea::placeholder{color:var(--text3)}
+.field textarea{resize:vertical;min-height:92px}
+.booking-submit{width:100%;margin-top:6px;border:none;cursor:pointer;font-size:15px}
+.hp{position:absolute;left:-9999px}
+.booking-direct{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px;padding-top:26px;border-top:1px solid var(--border)}
+.direct-item{display:flex;flex-direction:column;gap:3px;align-items:center;padding:12px 20px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;text-decoration:none;transition:border-color .2s;min-width:150px}
+.direct-item:hover{border-color:var(--amber)}
+.direct-lbl{font-size:11px;letter-spacing:1px;color:var(--text3)}
+.direct-val{font-size:14px;font-weight:700;color:var(--text)}
+@media(max-width:600px){.booking-box{padding:32px 22px}.field-grid{grid-template-columns:1fr}}
+.quick-actions{padding:0 8% 46px}
+.qa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1040px;margin:0 auto}
+.qa-card{display:flex;flex-direction:column;gap:7px;padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:12px;text-decoration:none;cursor:pointer;transition:border-color .2s,transform .2s}
+.qa-card:hover{border-color:var(--amber);transform:translateY(-3px)}
+.qa-primary{border-color:var(--amber);background:var(--surface2);box-shadow:0 10px 30px rgba(245,158,11,.12)}
+.qa-icon{font-size:26px}
+.qa-title{font-size:17px;font-weight:700;color:var(--text)}
+.qa-title .free{font-size:11px;font-weight:700;color:var(--green);border:1px solid var(--green);border-radius:20px;padding:1px 8px;margin-inline-start:6px;vertical-align:middle}
+.qa-desc{font-size:13px;color:var(--text2);line-height:1.6}
+@media(max-width:700px){.qa-grid{grid-template-columns:1fr}}
+.cert-section{padding:64px 8%;border-top:1px solid var(--border)}
+.cert-inner{display:grid;grid-template-columns:0.85fr 1.15fr;gap:44px;align-items:center;max-width:1200px;margin:0 auto}
+.cert-copy .eyebrow{color:var(--amber);font-weight:700;margin-bottom:12px}
+.cert-copy h2{margin-bottom:14px}
+.cert-copy p{font-size:15px;color:var(--text2);line-height:1.8}
+.cert-img-wrap{border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45);background:#fff}
+.cert-img-wrap img{display:block;width:100%;height:auto}
+@media(max-width:800px){.cert-inner{grid-template-columns:1fr;gap:26px}}
+.phone-row{display:flex;justify-content:center;gap:24px;margin-bottom:26px;flex-wrap:wrap}
+.phone-row a{color:var(--amber);font-size:20px;font-weight:700;text-decoration:none}
+
+footer{padding:40px 8%;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text3)}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:36px}
+  .about-grid{grid-template-columns:1fr}
+  .case-grid{grid-template-columns:1fr}
+  .future-grid{grid-template-columns:1fr}
+  .cap-grid{grid-template-columns:1fr}
+  .tools-grid{grid-template-columns:repeat(2,1fr)}
+  .courses-grid{grid-template-columns:1fr}
+  .courses-grid-2{grid-template-columns:1fr}
+  .learn-grid{grid-template-columns:1fr}
+  .month-program{padding:26px 22px}
+  .split-bar{flex-direction:column;height:auto}
+  .split-ai,.split-human{width:100%;padding:14px 0}
+  nav .links{display:none}
+}
+</style>
+</head>
+<body>
+
+<div id="page-main">
+
+<nav>
+  <div class="brand">مثلث التصدير الذكي</div>
+  <div class="links">
+    <a href="#about">نبذة</a>
+    <a href="#method">المنهجية</a>
+    <a href="#tools">الأدوات</a>
+    <a href="javascript:void(0)" onclick="showPage('courses')">كورسات</a>
+    <a href="#partners">شراكات</a>
+    <a href="#work">أعمال</a>
+    <a href="#future">قريباً</a>
+    <a href="#contact">تواصل</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow mono">SMART EXPORT TRIANGLE</div>
+      <div class="indagro-badge">Export Strategist · International Sales &amp; Development Trainer</div>
+      <h1>khaled nablsy<br><span>مثلث التصدير الذكي</span></h1>
+      <div class="role mono">Export Manager | AI Powered Market Research<br>Trade Intelligence | B2B Lead Generation<br>International Sales</div>
+      <div class="cred-badge">
+        <div class="cred-dot"></div>
+        <span>مدرب معتمد لدى مركز تدريب التجارة الخارجية — التابع لوزارة الاستثمار والتجارة الخارجية</span>
+      </div>
+      <p class="desc">خبرة 8+ سنوات في التصدير الدولي — بأدرّب شركات على دمج الذكاء الاصطناعي في كل خطوة: من اكتشاف السوق لحد إيميل جاهز لمتخذ القرار. مش نظرية. تطبيق حي بأدوات حقيقية.</p>
+      <div class="cta-row">
+        <a href="javascript:void(0)" onclick="showPage('courses')" class="btn btn-primary">احجز جلسة</a>
+        <a href="#method" class="btn btn-ghost">شوف المنهجية</a>
+      </div>
+    </div>
+    <div class="tri-wrap">
+      <svg class="tri-svg" viewBox="0 0 400 400">
+        <polygon points="200,50 350,320 50,320" class="tri-line"/>
+        <polygon points="200,50 350,320 50,320" class="tri-line-draw"/>
+
+        <circle cx="200" cy="50" r="8" class="tri-node"/>
+        <circle cx="200" cy="50" r="3" class="tri-node-inner"/>
+        <text x="200" y="28" text-anchor="middle" class="tri-label">SEARCH</text>
+        <text x="200" y="14" text-anchor="middle" class="tri-sublabel">بحث بمصادر متعددة</text>
+
+        <circle cx="350" cy="320" r="8" class="tri-node"/>
+        <circle cx="350" cy="320" r="3" class="tri-node-inner"/>
+        <text x="350" y="345" text-anchor="middle" class="tri-label">VERIFY</text>
+        <text x="350" y="360" text-anchor="middle" class="tri-sublabel">تدقيق متبادل</text>
+
+        <circle cx="50" cy="320" r="8" class="tri-node"/>
+        <circle cx="50" cy="320" r="3" class="tri-node-inner"/>
+        <text x="50" y="345" text-anchor="middle" class="tri-label">REACH</text>
+        <text x="50" y="360" text-anchor="middle" class="tri-sublabel">وصول لمتخذ القرار</text>
+
+        <text x="200" y="200" text-anchor="middle" class="tri-center-label">INTELLIGENCE-FIRST</text>
+        <text x="200" y="216" text-anchor="middle" class="tri-center-label">EXPORT SYSTEM</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<section class="quick-actions">
+  <div class="qa-grid">
+    <div class="qa-card qa-primary" onclick="goBook('')">
+      <div class="qa-icon">📅</div>
+      <div class="qa-title">احجز الآن</div>
+      <div class="qa-desc">جلسة أو كورس — أونلاين أو أوفلاين. احجز موعدك على طول.</div>
+    </div>
+    <div class="qa-card" onclick="goBook('استشارة مجانية')">
+      <div class="qa-icon">💬</div>
+      <div class="qa-title">استشارة <span class="free">مجانًا</span></div>
+      <div class="qa-desc">اسألني عن التصدير أو أدوات الـ AI — استشارة أولى مجانية.</div>
+    </div>
+    <div class="qa-card" onclick="goBook('طلب داتا مستوردين (مجانًا)')">
+      <div class="qa-icon">📊</div>
+      <div class="qa-title">داتا مستوردين <span class="free">مجانًا</span></div>
+      <div class="qa-desc">اطلب عيّنة قائمة مستوردين حقيقيين لسوقك — مجانًا.</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="eyebrow">01 — نبذة</div>
+  <h2>مين <span>خالد نابلسي</span></h2>
+  <div class="about-grid">
+    <div>
+      <p>مدرب تصدير دولي وأدوات ذكاء اصطناعي — <b>8+ سنوات خبرة</b> في المبيعات الدولية والتصدير الفعلي، حالياً <b>مدير تصدير بمصنع INDAGRO</b> للمنتجات الغذائية، قبل ما أبني منهجية "مثلث التصدير الذكي" لدمج AI في كل مرحلة من رحلة التصدير.</p>
+      <p>مش بأعلّم نظريات. كل خطوة بأدرّبها هي نفس الخطوة اللي بستخدمها بنفسي كـ Export Manager — بحث حقيقي، مصادر متعددة، وتدقيق قبل أي قرار.</p>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="num">18</div><div class="lbl">شركة تصدير دربتها</div></div>
+      <div class="stat"><div class="num">150+</div><div class="lbl">متدرب (موظفين ومديرين)</div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl">قطاعات: صناعي، غذائي، هندسي</div></div>
+      <div class="stat"><div class="num">19</div><div class="lbl">أداة AI بندرّب عليها عملياً</div></div>
+    </div>
+  </div>
+
+  <div class="split-callout">
+    <div class="split-label mono">منهجية العمل</div>
+    <div class="split-bar">
+      <div class="split-seg split-ai">
+        <span class="split-pct mono">60%</span>
+        <span class="split-txt">ذكاء اصطناعي</span>
+      </div>
+      <div class="split-seg split-human">
+        <span class="split-pct mono">40%</span>
+        <span class="split-txt">عقل بشري</span>
+      </div>
+    </div>
+    <p class="split-note">الـ AI بيسرّع البحث ويجيب المصادر — لكن القرار النهائي والتحقق من الأرقام دايماً بعقل بشري. مش تعويض، تكامل.</p>
+  </div>
+</section>
+
+
+<section id="partners">
+  <div class="eyebrow">02 — شراكات</div>
+  <h2>دربت <span>مع مين</span></h2>
+  <div class="partner-row">
+    <div class="partner-card partner-featured">
+      <div class="ptag mono">أهم اعتماد</div>
+      <h3>مركز تدريب التجارة الخارجية</h3>
+      <p>مدرب معتمد لدى المركز — التابع لوزارة الاستثمار والتجارة الخارجية.</p>
+    </div>
+    <div class="partner-card">
+      <div class="ptag mono">CURRENT ROLE</div>
+      <h3>INDAGRO</h3>
+      <p>مدير تصدير — منتجات غذائية.</p>
+    </div>
+    <div class="partner-card">
+      <div class="ptag mono">CONSULTING</div>
+      <h3>شركة النبلاء الخضراء — الجزائر</h3>
+      <p>استشاري تدريب ومبيعات لتصدير الملابس الجاهزة من مصر للجزائر.</p>
+    </div>
+  </div>
+  <div class="partner-row" style="margin-top:16px">
+    <div class="partner-card">
+      <div class="ptag mono">WORKSHOP · JUL 2026</div>
+      <h3>المجلس التصديري للملابس الجاهزة (ECE) × TRAIN Egypt</h3>
+      <p>ورشة "دمج أدوات الذكاء الاصطناعي في التصدير" — تفاعل مباشر وتطبيق فعلي من الحضور من أول جلسة.</p>
+    </div>
+    <div class="partner-card">
+      <div class="ptag mono">SESSIONS</div>
+      <h3>TRAIN Egypt</h3>
+      <p>جلسات أونلاين وأوفلاين — من جلسة يوم لحد برنامج يومين متكامل.</p>
+    </div>
+  </div>
+</section>
+
+<section id="method">
+  <div class="eyebrow">03 — المنهجية</div>
+  <h2>إزاي <span>بشتغل</span></h2>
+  <p style="font-size:15px;color:var(--text2);max-width:700px;margin-bottom:30px">الأول العقل البشري — لما ببحث في Trademap عن أرقام صح، بدقّقها بمصادر دولية موثوقة زي <a href="http://www.bcdesk.eu/en/node/1" target="_blank" style="color:var(--amber);text-decoration:none">EuroMed Trade Helpdesk</a> قبل ما أبني عليها أي قرار. الـAI بيسرّع البحث — العقل البشري هو اللي بيحكم.</p>
+
+  <div class="cap-grid">
+    <div class="cap-card">
+      <div class="cap-icon">🌍</div>
+      <h4>تحليل أنسب الأسواق من 190 دولة</h4>
+      <p>Trademap + Export Potential Map — مقارنة إحصائية حقيقية بين الأسواق، مش تخمين.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-icon">🎯</div>
+      <h4>الوصول لمتخذ القرار مباشرة</h4>
+      <p>Apollo + Lusha + Kaspr — اسم وإيميل مباشر لمدير المشتريات، مش info@.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-icon">📈</div>
+      <h4>سلوك المستهلك = رد فعلي على الإيميل</h4>
+      <p>لما بنشتغل على سلوك المستهلك صح، معدل الرد على الإيميلات بيزيد بشكل ملموس.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-icon">🤝</div>
+      <h4>التفاوض — كتب + أرض ميدان</h4>
+      <p>Never Split the Difference (Chris Voss) + Psychology of Selling (Brian Tracy) + SPIN Selling (Neil Rackham) — نظرية حقيقية مطبّقة فعلياً في صفقات حقيقية، مش قراية بس.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-icon">📊</div>
+      <h4>تحسين المبيعات الدولية</h4>
+      <p>مش استشارة نظرية — تحسين فعلي لأداء فريق المبيعات في التعامل مع العملاء الدوليين.</p>
+    </div>
+    <div class="cap-card">
+      <div class="cap-icon">🧑‍💼</div>
+      <h4>تطوير الشركة والموظفين</h4>
+      <p>بناء قدرات داخلية مستمرة — الشركة تقدر تشتغل بنفسها بعد التدريب، مش محتاجة حدا.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="eyebrow">04 — الأدوات</div>
+  <h2>19 أداة <span>مش 40 ألف</span></h2>
+  <p style="font-size:15px;color:var(--text2);max-width:700px;margin-bottom:10px">في أكتر من 40,000 أداة AI موجودة حالياً. المشكلة مش نقص الأدوات — المشكلة إنك تعرف مين فيهم فعلاً بيضيف قيمة في شغل التصدير، ومين بيضيّع وقتك. دول الأدوات اللي بستخدمها فعلياً وبدرّب عليها.</p>
+
+  <div class="tools-subhead mono">نماذج AI — بحث، تحليل، كتابة</div>
+  <div class="tools-grid">
+    <div class="tool-chip"><div class="tool-mono">Cl</div><span>Claude</span></div>
+    <div class="tool-chip"><div class="tool-mono">GP</div><span>ChatGPT</span></div>
+    <div class="tool-chip"><div class="tool-mono">Px</div><span>Perplexity</span></div>
+    <div class="tool-chip"><div class="tool-mono">Gr</div><span>Grok</span></div>
+    <div class="tool-chip"><div class="tool-mono">Ge</div><span>Gemini</span></div>
+    <div class="tool-chip"><div class="tool-mono">Ki</div><span>Kimi</span></div>
+    <div class="tool-chip"><div class="tool-mono">DS</div><span>DeepSeek</span></div>
+    <div class="tool-chip"><div class="tool-mono">Ar</div><span>Arena.ai</span></div>
+    <div class="tool-chip"><div class="tool-mono">Po</div><span>Poe</span></div>
+    <div class="tool-chip"><div class="tool-mono">Mx</div><span>Minimax</span></div>
+    <div class="tool-chip"><div class="tool-mono">Qw</div><span>Qwen</span></div>
+    <div class="tool-chip"><div class="tool-mono">Gq</div><span>Groq</span></div>
+  </div>
+
+  <div class="tools-subhead mono">أدوات متخصصة — أتمتة، تواصل، سورسينج</div>
+  <div class="tools-grid">
+    <div class="tool-chip"><div class="tool-mono">n8</div><span>n8n</span></div>
+    <div class="tool-chip"><div class="tool-mono">Cy</div><span>ChatlyAI</span></div>
+    <div class="tool-chip"><div class="tool-mono">NL</div><span>NotebookLM</span></div>
+    <div class="tool-chip"><div class="tool-mono">Mn</div><span>Manus</span></div>
+    <div class="tool-chip"><div class="tool-mono">Lv</div><span>Lovable</span></div>
+    <div class="tool-chip"><div class="tool-mono">Ac</div><span>Accio</span></div>
+    <div class="tool-chip"><div class="tool-mono">Ap</div><span>Apollo</span></div>
+  </div>
+
+  <div class="tools-note">💡 <b>ليه 19 أداة مش أداة واحدة؟</b> كل أداة عندها نقطة قوة مختلفة — سرعة، عمق بحث، تحليل مستندات طويلة، أو أتمتة. التدريب بيوريك إمتى تستخدم كل واحدة، مش بس "استخدم ChatGPT في كل حاجة."</div>
+</section>
+
+<section id="work">
+  <div class="eyebrow">05 — أعمال</div>
+  <h2>نماذج <span>حقيقية</span></h2>
+  <div class="case-grid case-grid-6">
+    <div class="case-card">
+      <div class="ctag mono">APPAREL · CONSULTING</div>
+      <h3>تدريب تصدير ملابس — مصر → الجزائر</h3>
+      <p>استشاري تدريب ومبيعات لشركة النبلاء الخضراء لتصدير الملابس الجاهزة من مصر للجزائر.</p>
+    </div>
+    <div class="case-card">
+      <div class="ctag mono">APPAREL · DEEP DIVE</div>
+      <h3>دليل قطاع الملابس الجاهزة</h3>
+      <p>كلمات مفتاحية، مواسم، شهادات (OEKO-TEX, GOTS)، وخطاب تجاري متخصص.</p>
+      <div class="metric">12</div>
+      <div class="metric-lbl">قسم مرجعي كامل</div>
+    </div>
+    <div class="case-card">
+      <div class="ctag mono">FROZEN · MARKET STUDY</div>
+      <h3>دراسة أسواق المنتجات المجمدة</h3>
+      <p>فراولة، مانجو، وباقي الفواكه والخضروات المجمدة — أسواق حالية وأسواق أقل ازدحاماً بتوقعات لحد 2029.</p>
+      <div class="metric">7</div>
+      <div class="metric-lbl">أسواق رئيسية محللة</div>
+    </div>
+    <div class="case-card">
+      <div class="ctag mono">FRESH & HERBS</div>
+      <h3>دليل سلوك المستهلك B2B</h3>
+      <p>منهجية تحليل سلوك مستهلك عبر مجمدات، فريش، رخام، وأعشاب وتوابل.</p>
+      <div class="metric">4</div>
+      <div class="metric-lbl">قطاعات مغطاة</div>
+    </div>
+    <div class="case-card">
+      <div class="ctag mono">TRAINING IMPACT</div>
+      <h3>150+ متدرب عبر 3 قطاعات</h3>
+      <p>صناعي، غذائي، وهندسي — موظفين ومديرين طبّقوا الأدوات على منتجاتهم الحقيقية.</p>
+    </div>
+  </div>
+</section>
+
+<section id="future">
+  <div class="eyebrow">06 — قريباً</div>
+  <h2>التوسع <span>القادم</span></h2>
+  <p style="font-size:15px;color:var(--text2);max-width:700px;margin-bottom:30px">تدريب وتأهيل طلاب الجامعات الخاصة قبل التخرج — تخصصات التجارة، الإعلام، الاقتصاد، اللوجيستيك، المبيعات، والتجارة الدولية، مع دمج معرفة أدوات الذكاء الاصطناعي كجزء أساسي من التأهيل.</p>
+  <div class="future-grid">
+    <div class="future-card">
+      <div class="future-icon">🎓</div>
+      <h4>تجارة واقتصاد</h4>
+      <p>تأهيل عملي قبل سوق العمل — تطبيق حقيقي مش نظري بس.</p>
+    </div>
+    <div class="future-card">
+      <div class="future-icon">📢</div>
+      <h4>إعلام</h4>
+      <p>كتابة محتوى ورسائل تسويقية موجهة للأسواق الدولية.</p>
+    </div>
+    <div class="future-card">
+      <div class="future-icon">🚚</div>
+      <h4>لوجيستيك</h4>
+      <p>فهم سلسلة الشحن والتصدير من منظور عملي فعلي.</p>
+    </div>
+    <div class="future-card">
+      <div class="future-icon">🌐</div>
+      <h4>مبيعات وتجارة دولية</h4>
+      <p>نفس المنهجية اللي بتشتغل بيها شركات حقيقية — من أول سنة تخرج.</p>
+    </div>
+  </div>
+  <div class="future-note">🚀 الهدف: خريج يدخل سوق العمل عارف يستخدم أدوات AI في التصدير فعلياً — مش يسمع عنها بس.</div>
+</section>
+
+<section id="contact" style="border-bottom:none">
+  <div class="booking-box">
+    <div class="booking-eyebrow mono">BOOKING</div>
+    <h2>احجز جلسة أو <span>كورس</span></h2>
+    <p>املى البيانات دي وهنتواصل معاك في أقرب وقت عشان نحدد الموعد والتفاصيل.</p>
+    <form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?booking=success#contact" class="booking-form">
+      <input type="hidden" name="form-name" value="booking">
+      <p class="hp"><label>سيبها فاضية: <input name="bot-field"></label></p>
+      <div class="field-grid">
+        <label class="field">الاسم<input type="text" name="name" required placeholder="اسمك الكامل"></label>
+        <label class="field">الإيميل<input type="email" name="email" required placeholder="your@email.com"></label>
+        <label class="field">التليفون<input type="tel" name="phone" required placeholder="01xxxxxxxxx"></label>
+        <label class="field">تاريخ مفضل<input type="date" name="preferred_date"></label>
+      </div>
+      <label class="field">نوع الطلب
+        <select name="request_type" required>
+          <option value="" disabled selected>اختر نوع الطلب</option>
+          <option>جلسة يوم كامل</option>
+          <option>برنامج يومين متكامل</option>
+          <option>برنامج شهر كامل (1-on-1)</option>
+          <option>تدريب لشركتك أو فريقك</option>
+          <option>استشارة مجانية</option>
+          <option>طلب داتا مستوردين (مجانًا)</option>
+        </select>
+      </label>
+      <label class="field">رسالة أو تفاصيل إضافية
+        <textarea name="message" rows="4" placeholder="اكتب أي تفاصيل عن شركتك أو المنتج أو اللي محتاجه..."></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary booking-submit">إرسال الطلب</button>
+    </form>
+    <div class="booking-direct">
+      <a href="https://wa.me/201155123102?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%AE%D8%A7%D9%84%D8%AF%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D9%88%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D9%83%D9%88%D8%B1%D8%B3" target="_blank" rel="noopener" class="direct-item">
+        <span class="direct-lbl mono">اتصل مباشرة</span>
+        <span class="direct-val">01155123102</span>
+      </a>
+      <a href="https://chat.whatsapp.com/EjXYEenwCBR1z7ZA4mHYZw" target="_blank" rel="noopener" class="direct-item">
+        <span class="direct-lbl mono">جروب المصدّرين</span>
+        <span class="direct-val">مجتمع المصدّرين العرب</span>
+      </a>
+      <a href="https://chat.whatsapp.com/LcLZVRg43ThBB7gfXAVl61" target="_blank" rel="noopener" class="direct-item">
+        <span class="direct-lbl mono">جروب الكورسات</span>
+        <span class="direct-val">مواعيد الكورسات والسيشن</span>
+      </a>
+      <a href="https://www.linkedin.com/in/khaled-nablsy-3b4aab18a" target="_blank" rel="noopener" class="direct-item">
+        <span class="direct-lbl mono">LinkedIn</span>
+        <span class="direct-val">khaled nablsy</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="mono">khaled nablsy · مثلث التصدير الذكي · 2026 · <a href="https://www.linkedin.com/in/khaled-nablsy-3b4aab18a" target="_blank" rel="noopener" style="color:var(--amber)">LinkedIn</a></footer>
+
+</div>
+
+
+<div id="page-courses" style="display:none">
+
+<a class="mobile-back" href="javascript:void(0)" onclick="showPage('main')">↑ رجوع</a>
+
+<nav>
+  <div class="brand">مثلث التصدير الذكي</div>
+  <a class="back-btn" href="javascript:void(0)" onclick="showPage('main')">← رجوع للبورتفوليو</a>
+</nav>
+
+<div class="hero" style="min-height:auto;padding:70px 8% 30px">
+  <div class="hero-grid" style="grid-template-columns:1fr">
+    <div>
+      <div class="hero-eyebrow mono">TRAINING CATALOG</div>
+      <h1>الكورسات <span>والبرامج</span></h1>
+      <p class="desc">3 كورسات كل شهر — أونلاين وأوفلاين — بجانب برامج تدريب خاصة مصممة على شركتك ومنتجك.</p>
+    </div>
+  </div>
+</div>
+
+<section id="courses">
+
+  <div class="courses-subhead mono">الكورسات الشهرية</div>
+  <div class="courses-grid">
+    <div class="course-card">
+      <div class="course-fmt mono">ONLINE</div>
+      <h4>جلسة يوم كامل</h4>
+      <p>يوم تدريبي — تحليل السوق والوصول لمتخذ القرار.</p>
+    </div>
+    <div class="course-card">
+      <div class="course-fmt mono">ONLINE / OFFLINE</div>
+      <h4>برنامج يومين</h4>
+      <p>8 ساعات — من البحث العميق لحد الإغلاق.</p>
+    </div>
+    <div class="course-card">
+      <div class="course-fmt mono">1-ON-1</div>
+      <h4>برنامج شهر كامل</h4>
+      <p>تدريب شخصي مكثّف — 4 جلسات أونلاين، متابعة مستمرة.</p>
+    </div>
+  </div>
+
+  <div class="month-program">
+    <div class="month-program-head">
+      <div class="ptag mono">تفصيل — برنامج شهر كامل (1-ON-1)</div>
+      <h3>دمج أدوات الذكاء الاصطناعي في عمليات التصدير</h3>
+      <p>من اختيار السوق لإغلاق الصفقة — برنامج تدريبي شخصي.</p>
+    </div>
+
+    <div class="month-subhead mono">ما ستتعلم</div>
+    <div class="learn-grid">
+      <div class="learn-item"><span>🌍</span><div><b>اختيار السوق والمواسم</b><p>خريطة 20+ سوق — مع تحديد المنتجات المناسبة لكل موسم طول السنة</p></div></div>
+      <div class="learn-item"><span>🎯</span><div><b>إيجاد المستورد</b><p>محاولة توفير أسماء مستوردين حقيقيين مع تحليل المنافسين والسوق</p></div></div>
+      <div class="learn-item"><span>📧</span><div><b>كتابة الإيميل</b><p>إيميل مخصص لكل مستورد يُقرأ ويُرد عليه — مو template</p></div></div>
+      <div class="learn-item"><span>🤝</span><div><b>التفاوض</b><p>أسلوب تفاوض يقفل الصفقة — مبني على سيكولوجية المشتري</p></div></div>
+      <div class="learn-item"><span>🧠</span><div><b>تحليل المشتري</b><p>شخصية المستورد، خوفه، ووجعه — قبل ما تكتبله سطر</p></div></div>
+      <div class="learn-item"><span>📊</span><div><b>سلوك المستهلك</b><p>من هو المستهلك النهائي لعميلك وكيف يأثر على قرار الشراء</p></div></div>
+      <div class="learn-item"><span>⚔️</span><div><b>تحليل المنافسين</b><p>ماذا يبيعون، لمن، وبكم — واين الثغرة اللي تدخل منها</p></div></div>
+      <div class="learn-item"><span>🤖</span><div><b>أدوات AI</b><p>تشتغل بنفسك بعد التدريب — مو محتاج حدا</p></div></div>
+    </div>
+
+    <div class="month-subhead mono">مخطط التدريب — 4 جلسات أونلاين</div>
+    <div class="plan-list">
+      <div class="plan-item"><div class="plan-num">1</div><div><b>اختيار السوق + تحليل المنافسين</b><p>نحدد أنسب 2-3 أسواق لمنتجك، ونحلل من يبيع نفس المنتج وأين</p></div></div>
+      <div class="plan-item"><div class="plan-num">2</div><div><b>إيجاد المستورد + تحليل شخصيته</b><p>نبني قائمة مستوردين حقيقيين ونفهم شخصية كل مستورد قبل التواصل</p></div></div>
+      <div class="plan-item"><div class="plan-num">3</div><div><b>كتابة الإيميل + سلوك المستهلك</b><p>نكتب إيميل مخصص لكل مستورد ونفهم من هو المستهلك النهائي لعميلك</p></div></div>
+      <div class="plan-item"><div class="plan-num">4</div><div><b>التفاوض + المتابعة</b><p>أسلوب تفاوض يقفل الصفقة — ومتابعة حتى أول رد حقيقي</p></div></div>
+    </div>
+
+    <div class="month-subhead mono">في نهاية الشهر عندك</div>
+    <ul class="result-list">
+      <li>خريطة أسواق كاملة مع المنتج المناسب لكل موسم</li>
+      <li>قائمة مستوردين حقيقيين جاهزة للتواصل</li>
+      <li>3 إيميلات مخصصة مكتوبة وجاهزة للإرسال</li>
+      <li>طريقة تفاوض تقفل فيها الصفقة</li>
+      <li>تشتغل بأدوات AI بنفسك بدون مساعدة</li>
+      <li>فهم كامل لشخصية المستورد وسيكولوجية سوقه</li>
+    </ul>
+  </div>
+
+  <div class="courses-subhead mono">تدريب فريق المبيعات الدولية</div>
+  <div class="courses-grid">
+    <div class="course-card">
+      <div class="course-fmt mono">TEAM TRAINING</div>
+      <h4>المبيعات الدولية والتسويق</h4>
+      <p>تأهيل الفريق كامل على البيع الدولي، التسويق للمستوردين، كتابة الإيميل، والتفاوض.</p>
+    </div>
+    <div class="course-card">
+      <div class="course-fmt mono">NEGOTIATION</div>
+      <h4>التفاوض مع المستورد</h4>
+      <p>أساليب تفاوض حقيقية مبنية على سيكولوجية المشتري — مش نظري.</p>
+    </div>
+    <div class="course-card">
+      <div class="course-fmt mono">EMAIL LAB</div>
+      <h4>أنسب إيميل لكل مستورد</h4>
+      <p>ورشة عملية: كل متدرب يطلع بإيميل جاهز فعلاً لمستورده المستهدف.</p>
+    </div>
+  </div>
+
+  <div class="courses-subhead mono">دراسات مخصصة</div>
+  <div class="courses-grid">
+    <div class="course-card">
+      <div class="course-fmt mono">COUNTRY STUDY</div>
+      <h4>دراسة سلوك مستهلك لكل دولة وولاية</h4>
+      <p>سيكولوجية الشعب، عادات الشراء، والفروق بين الولايات جوه نفس الدولة.</p>
+    </div>
+    <div class="course-card">
+      <div class="course-fmt mono">MARKET TRACKING</div>
+      <h4>متابعة أرقام وتحليل سوق مستمر</h4>
+      <p>تحديث دوري لأرقام الاستيراد والمنافسين — مش تقرير مرة واحدة وخلاص.</p>
+    </div>
+  </div>
+
+  <div class="courses-subhead mono ai-subhead">تدريب الذكاء الاصطناعي — قسم مستقل</div>
+  <div class="courses-grid">
+    <div class="course-card course-card-ai">
+      <div class="course-fmt mono">AI TOOLS</div>
+      <h4>أدوات الذكاء الاصطناعي في التصدير</h4>
+      <p>أكتر من 10 أدوات AI (Perplexity, ChatGPT, Grok, Gemini, Apollo, Lusha, Kaspr...) بتطبيق حي على منتجك.</p>
+    </div>
+  </div>
+
+  <div class="courses-subhead mono">خدمات متابعة</div>
+  <div class="courses-grid">
+    <div class="course-card">
+      <div class="course-fmt mono">FOLLOW-UP</div>
+      <h4>متابعة بعد التدريب</h4>
+      <p>مش تدريب وخلاص — متابعة فعلية لحد ما توصل لنتيجة حقيقية.</p>
+    </div>
+    <div class="course-card">
+      <div class="course-fmt mono">PROFILE</div>
+      <h4>تحسين LinkedIn والويب سايت</h4>
+      <p>بروفايل LinkedIn وموقع الشركة يعكسوا صورة احترافية تجذب المستورد الصح.</p>
+    </div>
+  </div>
+
+  <div class="courses-subhead mono">تدريب الشركات</div>
+  <div class="courses-grid courses-grid-2">
+    <div class="course-card course-card-corp">
+      <div class="course-fmt mono">للشركات</div>
+      <h4>تدريب وتأهيل للوصول لأنسب سوق</h4>
+      <p>من اختيار السوق الصح لحد بدء عملية البيع الفعلية — محتوى مصمم على منتج شركتك تحديداً.</p>
+    </div>
+    <div class="course-card course-card-corp">
+      <div class="course-fmt mono">للشركات</div>
+      <h4>تسويق وتطوير والبحث عن مستوردين</h4>
+      <p>بناء قدرة داخلية دائمة على إيجاد مستوردين جدد — الشركة تشتغل بنفسها بعدها.</p>
+    </div>
+  </div>
+
+  <div class="cal-note-inline">📅 <b>3 كورسات جديدة كل شهر</b> — المواعيد بتتحدد شهرياً. <a href="https://chat.whatsapp.com/LcLZVRg43ThBB7gfXAVl61" target="_blank" rel="noopener" style="color:var(--amber);font-weight:700">انضم لجروب الكورسات ←</a></div>
+</section>
+
+<section class="cert-section">
+  <div class="cert-inner">
+    <div class="cert-copy">
+      <div class="eyebrow">🎓 شهادة معتمدة</div>
+      <h2>في آخر كل كورس — <span>شهادة إتمام</span></h2>
+      <p>كل متدرب بياخد شهادة إتمام باسمه من «مثلث التصدير الذكي» بتوضّح الكورس والمهارات اللي اتدرّب عليها — جاهزة تحطها في سيرتك الذاتية أو بروفايل لينكد إن.</p>
+    </div>
+    <div class="cert-img-wrap">
+      <img src="certificate.png" alt="نموذج شهادة إتمام — مثلث التصدير الذكي" loading="lazy">
+    </div>
+  </div>
+</section>
+
+
+<footer class="mono">khaled nablsy · مثلث التصدير الذكي · 2026 · <a href="https://www.linkedin.com/in/khaled-nablsy-3b4aab18a" target="_blank" rel="noopener" style="color:var(--amber)">LinkedIn</a></footer>
+
+</div>
+
+<script>
+function showPage(name){
+  document.getElementById('page-main').style.display = (name === 'main') ? 'block' : 'none';
+  document.getElementById('page-courses').style.display = (name === 'courses') ? 'block' : 'none';
+  window.scrollTo(0,0);
+}
+function goBook(type){
+  var sel = document.querySelector('form[name="booking"] select[name="request_type"]');
+  if (sel && type) sel.value = type;
+  var c = document.getElementById('contact');
+  if (c) c.scrollIntoView({behavior:'smooth'});
+}
+(function(){
+  var form = document.querySelector('form[name="booking"]');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var g = function(n){ var el = form.elements[n]; return el ? el.value.trim() : ''; };
+    var lines = [
+      '📋 طلب جديد من موقع مثلث التصدير الذكي',
+      'النوع: ' + (g('request_type') || '—'),
+      'الاسم: ' + g('name'),
+      'الإيميل: ' + g('email'),
+      'التليفون: ' + g('phone'),
+      'التاريخ المفضل: ' + (g('preferred_date') || '—'),
+      'تفاصيل: ' + (g('message') || '—')
+    ];
+    try { fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(form)).toString()}); } catch(err){}
+    window.open('https://wa.me/201155123102?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+    var bx = document.querySelector('.booking-box');
+    if (bx) bx.innerHTML = '<div class="booking-eyebrow mono">تم الإرسال</div><h2>وصلنا <span>طلبك ✅</span></h2><p style="margin-bottom:0">فتحنا لك واتساب بتفاصيل طلبك — ابعت الرسالة وهنرد عليك بسرعة. لو الواتساب مافتحش، كلّمنا على <a href="https://wa.me/201155123102" style="color:var(--amber);font-weight:700">01155123102</a></p>';
+  });
+})();
+</script>
+
+</body>
+</html>
